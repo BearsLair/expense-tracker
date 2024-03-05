@@ -25,3 +25,19 @@ input {
 p {
   font-size: 20px;
 }
+
+ul {
+  list-style-type: none;
+}
+
+h2 {
+  text-align: center;
+}
+
+.expensesection > h3 {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+li {
+}
