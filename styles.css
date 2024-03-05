@@ -1,0 +1,27 @@
+h1 {
+  text-align: center;
+}
+
+.inputfields {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.inputfields > div {
+  display: flex;
+  flex-direction: row;
+  margin-left: 20px;
+  align-items: center;
+}
+
+input {
+  margin-left: 10px;
+  font-size: 20px;
+  border-radius: 5px;
+  height: 30px;
+}
+
+p {
+  font-size: 20px;
+}
