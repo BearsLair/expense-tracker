@@ -48,4 +48,6 @@ function addExpense() {
 const calculateTotal = (expenseList) =>
   expenseList.reduce((sum, item) => (sum += item.expenseAmount), 0);
 
-// function renderList() { };
+const renderList = (expenseList) => {
+  expenseList.map();
+};
