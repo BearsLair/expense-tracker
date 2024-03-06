@@ -38,9 +38,6 @@ function addExpense() {
 
   expenseList.push(addedExpense);
 
-  // TEST
-  console.log(expenseList);
-
   expenseTotal.textContent = calculateTotal(expenseList).toFixed(2);
 
   renderList(expenseList);
@@ -54,15 +51,19 @@ const renderList = (expenseList) => {
   expenseList.map((item) => {
     const listItem = document.createElement("li");
     listItem.setAttribute("id", `${item.expenseId}`);
-    listItem.innerHTML = `${item.expenseItem} ${item.expenseDate} $${item.expenseAmount} <button id=deleteBtn>Delete</button>`;
-
-    // const deleteBtn = document.querySelector("#deleteBtn");
-
-    // deleteBtn.addEventListener("click", () => {
-    //   list.removeChild(listItem);
-    //   renderList(expenseList);
-    // });
+    listItem.innerHTML = `${item.expenseItem} ${item.expenseDate} $${item.expenseAmount} <button id="delete-btn">Delete</button>`;
 
     list.appendChild(listItem);
+
+    const deleteBtn = document.getElementById("delete-btn");
+    const ulChild = document.getElementById(`${item.expenseId}`);
+
+    deleteBtn.addEventListener("click", () => {
+      expenseList.splice(item.expenseId - 1, 1);
+      renderList(expenseList);
+    });
   });
+  item.value = "";
+  amount.value = "";
+  date.value = "";
 };
