@@ -42,9 +42,6 @@ function addExpense() {
 
   expenseTotal.textContent = calculateTotal(expenseList).toFixed(2);
 
-  //   totalExpenses = calculateTotal(expenseList);
-  //   expenseTotal.textContent = totalExpenses;
-
   // renderList();
 }
 
