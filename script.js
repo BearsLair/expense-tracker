@@ -6,6 +6,7 @@ const submitBtn = document.getElementById("submitBtn");
 const total = document.getElementById("total");
 
 let expenseList = [];
+let totalExpenses = 0;
 
 function Expense(expenseId, expenseItem, expenseAmount, expenseDate) {
   this.expenseId = expenseId;
@@ -24,7 +25,7 @@ function addExpense() {
     : (expenseId = expenseList.length + 1);
 
   const expenseItem = item.value;
-  const expenseAmount = amount.value;
+  const expenseAmount = Number(amount.value);
   const expenseDate = date.value;
 
   const addedExpense = new Expense(
@@ -39,10 +40,15 @@ function addExpense() {
   // TEST
   console.log(expenseList);
 
-  // calculateTotal();
+  expenseTotal.textContent = calculateTotal(expenseList).toFixed(2);
+
+  //   totalExpenses = calculateTotal(expenseList);
+  //   expenseTotal.textContent = totalExpenses;
+
   // renderList();
 }
 
-// function calculateTotal() {};
+const calculateTotal = (expenseList) =>
+  expenseList.reduce((sum, item) => (sum += item.expenseAmount), 0);
 
 // function renderList() { };
