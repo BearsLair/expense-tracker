@@ -51,25 +51,11 @@ const renderList = (expenseList) => {
   expenseList.map((item) => {
     const listItem = document.createElement("li");
     listItem.setAttribute("id", `${item.expenseId}`);
-    listItem.innerHTML = `${item.expenseItem} ${item.expenseDate} $${item.expenseAmount} <button id="delete-btn-${item.expenseId}">Delete</button>`;
+    listItem.innerHTML = `${item.expenseItem} ${item.expenseDate} $${item.expenseAmount}`;
 
     list.appendChild(listItem);
-
-    const deleteBtn = document.getElementById(`delete-btn-${item.expenseId}`);
-    deleteBtn.addEventListener("click", () => {
-      const ulChild = document.getElementById(`${item.expenseId}`);
-      //Remove from expenseList
-      for (let i = 1; i < expenseList.length + 1; i++) {
-        if (expenseList[i].expenseId === item.expenseId) {
-          expenseList.slice(i, 1);
-        }
-      }
-      list.removeChild(ulChild);
-      //Remove the specific li element from ul
-
-      renderList(expenseList);
-    });
   });
+
   item.value = "";
   amount.value = "";
   date.value = "";
