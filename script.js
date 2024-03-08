@@ -56,11 +56,17 @@ const renderList = (expenseList) => {
     list.appendChild(listItem);
 
     const deleteBtn = document.getElementById(`delete-btn-${item.expenseId}`);
-    const ulChild = document.getElementById(`${item.expenseId}`);
-
     deleteBtn.addEventListener("click", () => {
-      expenseList.splice(item.expenseId - 1, 1);
-      list.innerHTML = "";
+      const ulChild = document.getElementById(`${item.expenseId}`);
+      //Remove from expenseList
+      for (let i = 1; i < expenseList.length + 1; i++) {
+        if (expenseList[i].expenseId === item.expenseId) {
+          expenseList.slice(i, 1);
+        }
+      }
+      list.removeChild(ulChild);
+      //Remove the specific li element from ul
+
       renderList(expenseList);
     });
   });
