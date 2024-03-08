@@ -55,7 +55,12 @@ li {
   justify-content: center;
 }
 
-#submitBtn {
+#submitBtn,
+#deleteAllBtn {
   margin-top: 20px;
   font-size: 20px;
+}
+
+#deleteAllBtn {
+  margin-left: 20px;
 }

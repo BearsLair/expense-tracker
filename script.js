@@ -60,3 +60,16 @@ const renderList = (expenseList) => {
   amount.value = "";
   date.value = "";
 };
+
+const deleteAll = document.getElementById("deleteAllBtn");
+
+deleteAll.addEventListener("click", () => {
+  expenseList = [];
+  list.innerHTML = "";
+
+  item.value = "";
+  amount.value = "";
+  date.value = "";
+  totalExpenses = 0;
+  total.textContent = "";
+});
